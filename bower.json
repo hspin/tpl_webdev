@@ -1,0 +1,10 @@
+{
+  "name": "tpl_frontend",
+  "description": "frontend web development framework",
+  "main": "",
+  "private": true,
+  "dependencies": {
+    "pure": "^0.6.0",
+    "lodash": "^4.13.1"
+  }
+}

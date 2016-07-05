@@ -1,0 +1,43 @@
+{
+  "name": "tpl_frontend",
+  "version": "1.1.0",
+  "description": "full stack web development framework",
+  "scripts": {
+    "setup": "npm install && bower install --config.interactive=false",
+    "wire": "npm-run-all --parallel wiredep usemin pug stylus",
+    "wiredep": "wiredep -s ./client/jade/working.jade",
+    "usemin": "gulp usemin && rimraf ./client/preview/_layout_working.jade",
+    "pug": "pug --pretty ./client/jade/*.pug --out ./client/preview",
+    "stylus": "stylus -u nib -u axis-css -u autoprefixer-stylus -u rupture -u jeet ./client/stylus/main.styl --out ./client/preview/css/styles.css",
+    "client": "beefy --port 8005 ./client/script/main.js:js/bundle.js --cwd ./client/preview",
+    "watch": "npm-run-all --parallel watch-stylus watch-pug",
+    "watch-stylus": "stylus -u nib -u axis-css -u autoprefixer-stylus -u rupture -u jeet -w ./client/stylus/main.styl --out ./client/preview/css/styles.css",
+    "watch-pug": "pug --pretty --watch ./client/jade/*.pug --out ./client/preview",
+    "live": "livereload client",
+    "start": "npm-run-all --parallel client watch live",
+    "build": "npm-run-all build:clean build:js build:copy-1 build:copy-2 minify:js minify:css",
+    "build:clean": "rimraf ./build && mkdirp ./build && mkdirp ./build/css && mkdirp ./build/js && mkdirp ./build/fonts && mkdirp ./build/imgs",
+    "build:js": "browserify ./client/script/main.js > ./build/js/bundle.js",
+    "build:copy-1": "cpy ./client/preview/fonts/* ./build/fonts/ && cpy ./client/preview/js/*.js ./build/js/ && cpy ./client/preview/*.html ./build/",
+    "build:copy-2": "cpy ./client/preview/css/*.css ./build/css/ && cpy ./client/preview/imgs/* ./build/imgs/",
+    "minify:js": "uglifyjs ./build/js/app.js -o ./build/js/app.js && uglifyjs ./build/js/bundle.js -o ./build/js/bundle.js ",
+    "minify:css": "cleancss ./build/css/styles.css -o ./build/css/styles.css && cleancss ./build/css/vendor.css -o ./build/css/vendor.css",
+    "server": "http-server ./build/"
+  },
+  "dependencies": {
+    "clean-css": "^3.4.18",
+    "cpy-cli": "^1.0.1",
+    "gulp-jade-usemin": "^1.1.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.1.0",
+    "gulp-uglify": "^1.5.4",
+    "http-server": "^0.9.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^2.3.0",
+    "rimraf": "^2.5.2",
+    "uglify-js": "^2.6.4",
+    "wiredep": "^4.0.0",
+    "wiredep-cli": "^0.1.0"
+  }
+}
