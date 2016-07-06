@@ -10,4 +10,4 @@ npm run start - watch live development server
 
 npm run build - build static final files
 
-npm run serve - webserver see build static files
+npm run server - webserver see build static files
