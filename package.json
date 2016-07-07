@@ -4,9 +4,10 @@
   "description": "full stack web development framework",
   "scripts": {
     "setup": "npm install && bower install --config.interactive=false",
-    "wire": "npm-run-all --parallel wiredep usemin pug stylus",
+    "wire": "npm-run-all wiredep usemin usemin-mv pug stylus",
     "wiredep": "wiredep -s ./client/jade/_layout_working.jade",
-    "usemin": "gulp usemin && rimraf ./client/preview/_layout_working.jade",
+    "usemin": "gulp usemin",
+    "usemin-mv": "gulp usemin-mv && rimraf ./client/preview/_layout_working.jade",
     "pug": "pug --pretty ./client/jade/*.pug --out ./client/preview",
     "stylus": "stylus -u nib -u axis -u autoprefixer-stylus -u rupture -u jeet ./client/stylus/main.styl --out ./client/preview/css/styles.css",
     "client": "beefy --port 8005 ./client/script/main.js:js/bundle.js --cwd ./client/preview",

@@ -2,8 +2,8 @@ var gulp = require('gulp');
 var usemin = require('gulp-jade-usemin');
 var uglify = require('gulp-uglify');
 var minifyHtml = require('gulp-minify-html');
-var rev = require('gulp-rev');
-var rename = require("gulp-rename");
+// var rev = require('gulp-rev');
+var rename = require('gulp-rename');
 
 gulp.task('usemin', function() {
   gulp.src('./client/jade/_layout_working.jade')
@@ -13,17 +13,12 @@ gulp.task('usemin', function() {
       js: [uglify()]
     }))
     .pipe(gulp.dest('./client/preview'));
-
-  gulp.src("./client/preview/_layout_working.jade")
-    .pipe(rename("layout.jade"))
-    .pipe(gulp.dest("./client/jade/"));
-
 });
 
-gulp.task('rename-mv', function() {
-  gulp.src("./client/preview/_layout_working.jade")
-  .pipe(rename("layout.jade"))
-  .pipe(gulp.dest("./client/jade/"));
+gulp.task('usemin-mv', function() {
+  gulp.src('./client/preview/_layout_working.jade')
+  .pipe(rename('_layout.jade'))
+  .pipe(gulp.dest('./client/jade/'));
 });
 
-      // js: [uglify(), rev()]
+// js: [uglify(), rev()]
