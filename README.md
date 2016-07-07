@@ -18,8 +18,10 @@ npm run server - webserver see build static files
 add
 
     npm install globstar --global
+    npm install live-reload --global
 
 edit package.json to
 
     "pug": "globstar -- pug --pretty \"**/client/jade/*.pug\" --out ./client/preview",
     "watch-pug": "globstar -- pug --pretty --watch \"**/client/jade/*.pug\" --out ./client/preview",
+    "live": "live-reload client --port=35729 --delay=900",
