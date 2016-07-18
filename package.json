@@ -9,7 +9,7 @@
     "usemin": "gulp usemin",
     "usemin-mv": "gulp usemin-mv && rimraf ./client/preview/_layout_working.jade",
     "pug": "pug --pretty ./client/jade/*.pug --out ./client/preview",
-    "stylus": "stylus -u nib -u axis -u autoprefixer-stylus -u rupture -u jeet ./client/stylus/main.styl --out ./client/preview/css/styles.css",
+    "stylus": "mkdirp ./client/preview/css && stylus -u nib -u axis -u autoprefixer-stylus -u rupture -u jeet ./client/stylus/main.styl --out ./client/preview/css/styles.css",
     "client": "beefy --port 8005 ./client/script/main.js:js/bundle.js --cwd ./client/preview",
     "watch": "npm-run-all --parallel watch-stylus watch-pug",
     "watch-stylus": "stylus -u nib -u axis -u autoprefixer-stylus -u rupture -u jeet -w ./client/stylus/main.styl --out ./client/preview/css/styles.css",
