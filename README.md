@@ -12,6 +12,10 @@ npm run build - build static final files
 
 npm run server - webserver see build static files
 
+## Global npm install
+
+    npm install -g browserify live-reload beefy
+
 
 ## To use on Windows -
 
