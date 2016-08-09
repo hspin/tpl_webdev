@@ -14,7 +14,11 @@ npm run server - webserver see build static files
 
 ## Global npm install
 
-    npm install -g browserify live-reload beefy
+    npm install -g bower gulp
+
+    npm install -g browserify live-reload beefy globstar
+
+    npm install -g pug@2.0.0-beta3 pug-cli@1.0.0-alpha6 stylus@0.54.5 nib@1.1.0 axis@0.6.1 autoprefixer-stylus@0.9.4 rupture@0.6.1 jeet@6.1.2
 
 
 ## To use on Windows -
