@@ -20,10 +20,11 @@ npm run server - webserver see build static files
 
 ## To use on Windows -
 
-add
+The npm modules such as gulp are not installed to the path.
 
-    npm install live-reload --global
+If gulp has been installed globally, you can use the process below:
 
-edit package.json to
+    1. Create an environmental variable called NODE_PATH
 
-    "live": "live-reload client --port=35729 --delay=900",
+    2. Set it to: %AppData%\npm\node_modules
+
