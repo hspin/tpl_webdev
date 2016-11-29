@@ -7,7 +7,7 @@ var rename = require('gulp-rename');
 var removeCode = require('gulp-remove-code');
 
 gulp.task('usemin', function() {
-  gulp.src('./client/jade/_layout_working.jade')
+  gulp.src('./client/pug/_layout_working.jade')
     .pipe(usemin({
       css: ['concat'],
       html: [minifyHtml({empty: true})],
@@ -19,7 +19,7 @@ gulp.task('usemin', function() {
 gulp.task('usemin-mv', function() {
   gulp.src('./client/preview/_layout_working.jade')
   .pipe(rename('_layout.jade'))
-  .pipe(gulp.dest('./client/jade/'));
+  .pipe(gulp.dest('./client/pug/'));
 });
 
 gulp.task('rmlive', function() {
