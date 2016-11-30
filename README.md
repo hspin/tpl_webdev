@@ -18,6 +18,10 @@ npm run server - webserver see build static files
 
     sudo npm install -g browserify beefy livereload 
 
+## Optional transform
+
+    "client": "beefy --port 8005 ./client/script/main.js:js/bundle.js --cwd ./client/preview -- --transform jadeify",
+
 ## To use on Windows -
 
 The npm modules such as gulp are not installed to the path.
