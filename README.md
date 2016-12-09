@@ -18,6 +18,10 @@ npm run server - webserver see build static files
 
     sudo npm install -g browserify beefy livereload 
 
+## Optional Global npm install
+
+    sudo npm install -g buble uglify-js
+
 ## Optional transform
 
     "client": "beefy --port 8005 ./client/script/main.js:js/bundle.js --cwd ./client/preview -- --transform jadeify",
