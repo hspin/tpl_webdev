@@ -15,7 +15,7 @@
     "watch": "npm-run-all --parallel watch-stylus watch-pug",
     "watch-stylus": "stylus -u nib -u axis -u autoprefixer-stylus -u rupture -u jeet -w ./client/stylus/main.styl --out ./client/preview/css/styles.css",
     "watch-pug": "globstar -- pug --pretty --watch \"**/client/pug/*.pug\" --out ./client/preview",
-    "live": "livereload client --port 35729 --wait 300",
+    "live": "livereload client -d -e 'jade,scss' --port 35729 --wait 300",
     "start": "npm-run-all --parallel client watch live",
     "build": "npm-run-all build:clean build:js build:copy-1 build:copy-2 build:nolive minify:js minify:css",
     "build:clean": "rimraf ./build && mkdirp ./build && mkdirp ./build/css && mkdirp ./build/js && mkdirp ./build/fonts && mkdirp ./build/imgs",
