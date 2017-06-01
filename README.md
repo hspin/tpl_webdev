@@ -14,9 +14,10 @@ npm run server - webserver see build static files
 
 ## Global npm install
 
-    sudo npm install -g bower gulp
+    sudo npm install -g bower gulp browserify
 
-    sudo npm install -g browserify beefy livereload 
+    sudo npm install -g beefy livereload clean-css-cli
+
 
 ## Optional Global npm install
 
